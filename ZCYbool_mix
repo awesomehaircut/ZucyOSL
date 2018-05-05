@@ -1,0 +1,17 @@
+/*
+ * Bool
+ *
+ */
+
+
+shader Bool_mix_bsdf(
+    int in = 1,
+    closure color shader0 = 0,
+    closure color shader1 = 0,
+    output closure color BSDF = diffuse(N))
+{
+    BSDF = shader0;
+    if (in % 2)
+        BSDF = shader1;
+}
+
